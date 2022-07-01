@@ -67,10 +67,10 @@ jobs:
 
       - name: Build
         shell: bash
-        # run: cmake --build . --config ${{ matrix.config.build_type }}
-        run: cmake --build .
+        # run: cmake --build build --config ${{ matrix.config.build_type }}
+        run: cmake --build build
 
       - name: Install
         shell: bash
-        run: cmake --install . --strip
+        run: cmake --install build --strip
 
