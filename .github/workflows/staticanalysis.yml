@@ -12,6 +12,8 @@ jobs:
     - name: Run static analysis for C++ project
       uses: JacobDomagala/StaticAnalysis@v0.0.4
       with:
+        apt_pckgs: software-properties-common clang-tidy
+        
         # (Optional) clang-tidy args
         clang_tidy_args: -checks='*,fuchsia-*,google-*,zircon-*,abseil-*,modernize-use-trailing-return-type'
 
