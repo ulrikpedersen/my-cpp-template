@@ -23,7 +23,7 @@ SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 # The RPATH to be used when installing, but only if it's not a system directory
 LIST(FIND CMAKE_PLATFORM_IMPLICIT_LINK_DIRECTORIES "${CMAKE_INSTALL_PREFIX}/lib" isSystemDir)
 IF("${isSystemDir}" STREQUAL "-1")
-SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
+   SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
 ENDIF("${isSystemDir}" STREQUAL "-1")
 
 
@@ -46,3 +46,4 @@ string(
             GIT_SHORT_SHA)
 
 add_subdirectory(src)
+add_subdirectory(test)
