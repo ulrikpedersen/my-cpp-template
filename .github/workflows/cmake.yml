@@ -23,8 +23,9 @@ jobs:
 
     - name: Install dependencies on ubuntu
       if: startsWith(matrix.os, 'ubuntu')
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        sudo apt-get update
         sudo apt-get install cmake
         cmake --version
         gcc --version
