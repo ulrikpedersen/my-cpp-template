@@ -44,14 +44,14 @@ jobs:
         if: startsWith(matrix.config.name, 'Ubuntu')
         run: |
           sudo apt-get update
-          sudo apt-get install cmake
+          sudo apt-get install cmake catch2
           cmake --version
           gcc --version
 
       - name: Install dependencies on macos
         if: startsWith(matrix.config.os, 'macOS')
         run: |
-          brew install cmake
+          brew install cmake catch2
           cmake --version
           clang --version
           
