@@ -45,7 +45,7 @@ jobs:
     - name: Install dependencies on windows
       if: startsWith(matrix.os, 'windows')
       run: |
-        choco install catch2 -y
+        # choco install catch2 -y
         cmake --version
         clang --version
 
