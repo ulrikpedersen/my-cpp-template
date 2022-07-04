@@ -7,6 +7,5 @@ target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)
 #add_executable(custom-main-tests tests.cpp test-main.cpp)
 #target_link_libraries(custom-main-tests PRIVATE Catch2::Catch2)
 
-include(CTest)
 include(Catch)
 catch_discover_tests(tests)

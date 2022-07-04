@@ -46,4 +46,6 @@ string(
             GIT_SHORT_SHA)
 
 add_subdirectory(src)
+
+include(CTest)
 add_subdirectory(test)
