@@ -42,11 +42,18 @@ jobs:
 
       - name: Install dependencies on ubuntu
         if: startsWith(matrix.config.name, 'Ubuntu')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           sudo apt-get update
-          sudo apt-get install cmake catch2
+          sudo apt-get install cmake
           cmake --version
           gcc --version
+          gh release download -R catchorg/Catch2 v3.0.1 --archive=tar.gz
+          tar -zxf Catch2*.tar.gz && cd Catch2-3.0.1
+          mkdir build && cd build
+          cmake ..
+          sudo make install
 
       - name: Install dependencies on macos
         if: startsWith(matrix.config.os, 'macOS')
