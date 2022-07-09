@@ -45,6 +45,8 @@ string(
             8
             GIT_SHORT_SHA)
 
+include(FetchContent)
+
 add_subdirectory(src)
 
 include(CTest)
