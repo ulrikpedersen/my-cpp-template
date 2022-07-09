@@ -14,7 +14,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
+        os: [ubuntu-latest, macos-latest]
         
     runs-on: ${{ matrix.os }}
 
@@ -42,13 +42,6 @@ jobs:
         cmake --version
         clang --version
         
-    - name: Install dependencies on windows
-      if: startsWith(matrix.os, 'windows')
-      run: |
-        # choco install catch2 -y
-        cmake --version
-        clang --version
-
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
