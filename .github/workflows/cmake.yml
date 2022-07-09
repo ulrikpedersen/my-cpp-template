@@ -24,7 +24,6 @@ jobs:
 
     - name: Install dependencies on ubuntu
       if: startsWith(matrix.os, 'ubuntu')
-      env:
       run: |
         cmake --version
         gcc --version
