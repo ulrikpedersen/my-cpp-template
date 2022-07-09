@@ -9,6 +9,7 @@ on:
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   build:
@@ -24,21 +25,14 @@ jobs:
     - name: Install dependencies on ubuntu
       if: startsWith(matrix.os, 'ubuntu')
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        sudo apt-get install cmake
         cmake --version
         gcc --version
-        gh release download -R catchorg/Catch2 v3.0.1 --archive=tar.gz
-        tar -zxf Catch2*.tar.gz && cd Catch2-3.0.1
-        mkdir build && cd build
-        cmake ..
-        sudo make install
 
     - name: Install dependencies on macos
       if: startsWith(matrix.os, 'macos')
       run: |
-        brew install cmake catch2
+        brew install catch2
         cmake --version
         clang --version
         
