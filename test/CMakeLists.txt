@@ -13,13 +13,15 @@ else()
   list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
 endif()
 
+set(CMAKE_INCLUDE_CURRENT_DIR on)
+include_directories(../src)
 # These tests can use the Catch2-provided main
 add_executable(tests tests.cpp)
-target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)
+target_link_libraries(tests PRIVATE Catch2::Catch2WithMain sum)
 
 # These tests need their own main
 #add_executable(custom-main-tests tests.cpp test-main.cpp)
 #target_link_libraries(custom-main-tests PRIVATE Catch2::Catch2)
 
 include(Catch)
-catch_discover_tests(tests)
+catch_discover_tests(tests REPORTER JUnit OUTPUT_DIR "." OUTPUT_PREFIX "junit_" OUTPUT_SUFFIX ".xml")
