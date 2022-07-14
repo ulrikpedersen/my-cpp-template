@@ -55,3 +55,5 @@ jobs:
       if: always()
       with:
         report_paths: '**/build/test/junit_*.xml'
+        annotate_only: 'true'
+        check_name: 'Catch2 JUnit Test Report'
