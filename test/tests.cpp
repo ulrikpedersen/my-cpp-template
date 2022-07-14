@@ -19,4 +19,5 @@ TEST_CASE("SumsCalculated", "[sum]")
 {
   REQUIRE(sum_int(1, 2) == 3);
   REQUIRE(sum_int(2, 2) == 4);
+  REQUIRE(sum_int(2, 3) == 5);
 }
