@@ -51,8 +51,7 @@ jobs:
       run: ctest -C ${{env.BUILD_TYPE}}
       
     - name: Publish Test Report
-      uses: mikepenz/action-junit-report@v3
-        if: always() # always run even if the previous step fails
-        with:
-          report_paths: '**/build/test/junit_*.xml'
-          
+      uses: mikepenz/action-junit-report@v3.1
+      if: always()
+      with:
+        report_paths: '**/build/test/junit_*.xml'
