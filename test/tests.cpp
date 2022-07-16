@@ -25,6 +25,6 @@ TEST_CASE("SumsCalculated", "[sum]")
 TEST_CASE("SomeSumsAreWrong", "[dumsum]")
 {
   CHECK(sum_int(3, 4) == 7);
-  CHECK(sum_int(4, 4) == 7);
+  CHECK(sum_int(4, 4) == 8);
   CHECK(sum_int(4, 3) == 7);
 }
