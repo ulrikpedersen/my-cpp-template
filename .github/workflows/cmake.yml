@@ -1,4 +1,4 @@
-name: CMake
+name: Build And Test
 
 on:
   push:
@@ -83,6 +83,8 @@ jobs:
         run: ls -R
 
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
+        # Really neat Github Action: https://github.com/marketplace/actions/publish-unit-test-results 
+        # Note that the "composite" version installs packages in the python environment
+        uses: EnricoMi/publish-unit-test-result-action/composite@v2
         with:
-          files: "artifacts/**/junit_*.xml"
+          junit_files: "artifacts/**/junit_*.xml"
