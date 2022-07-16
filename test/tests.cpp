@@ -21,3 +21,10 @@ TEST_CASE("SumsCalculated", "[sum]")
   REQUIRE(sum_int(2, 2) == 4);
   REQUIRE(sum_int(2, 3) == 5);
 }
+
+TEST_CASE("SomeSumsAreWrong", "[dumsum]")
+{
+  CHECK(sum_int(3, 4) == 7);
+  CHECK(sum_int(4, 4) == 7);
+  CHECK(sum_int(4, 3) == 7);
+}
