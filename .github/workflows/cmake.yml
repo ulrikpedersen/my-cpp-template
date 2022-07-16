@@ -80,7 +80,7 @@ jobs:
           path: artifacts
 
       - name: Display structure of downloaded artifact files
-          run: ls -R
+        run: ls -R
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
